@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#heading {
+    text-align: center;
+    font-weight: bold;
+    background-color: #333;
+    color: white;
+}
+
+.Credentials, .Message-Details, .Message {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#service, #mail, #password {
+    padding: 8px;
+    width: 30%;
+}
+
+#recepient, #subject, #type {
+    width: 30%;
+    padding: 8px;
+}
+
+#type {
+    width: 27%;
+}
+
+textarea {
+    flex: 1;
+    height: 200px;
+}
+
+.docs {
+    text-align: right;
+    padding: 10px;
+}
+
+.docs input[type=submit] {
+    padding: 8px 20px;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: red;
+    color : white;
+}
+
+@media only screen and (max-width: 900px) {
+    .modal {
+        width: 75%;
+    }
+    #recepient, #subject, #type,#service, #mail, #password {
+        width: 28%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .modal {
+        width: 85%;
+        bottom: 0;
+    }
+    .modal-body {
+        overflow-y: auto;
+    }
+    .Credentials, .Message-Details {
+        flex-direction: column;
+    }
+    #recepient, #subject, #type,#service, #mail, #password {
+        display: block;
+        width: 60%;
+        margin: 5px ;
+    }
+}

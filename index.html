@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Mail</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/3c21dacc40.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="modal">
+    <!-- <h1 id="heading">Mailer</h1> -->
+    <div class="modal-body">
+        <form action="sendmail" method="post" enctype="multipart/form-data">
+            <h2>Credentials</h2>
+            <div class="Credentials">
+                <input type="email" name="mail" placeholder="Enter your email" id="mail" required>
+                <input type="password" name="password" placeholder="Enter your password" id="password" required>
+                <select class="service" name="service" id="service" required>
+                    <option value="Gmail"><i class="fab fa-google"></i>Gmail</option>
+                    <option value="Yahoo">Yahoo</option>
+                    <option value="Hotmail">Hotmail</option>
+                    <option value="Outlook365">Outlook365</option>
+                </select>
+            </div>
+            <h2>Message</h2>
+            <div class="Message-Details">
+                <input type="email" name="recepient" placeholder="Recepient" id="recepient" required>
+                <input type="text" name="subject" placeholder="subject" id="subject">
+                <span id="type">
+                <input type="radio" name="contentType" value="html" id="html">
+                <label for="html">html</label>
+                <input type="radio" name="contentType" value="text" id="text">
+                <label for="text">text</label>
+              </span>
+            </div>
+            <div class="Message">
+                <textarea name="content" required></textarea>
+            </div>
+            <div class="docs">
+                <p id="filecount" style="float: left"></p>
+                <input type="file" name="documents" id="documents" onChange="img_pathUrl(this)" style="display: none">
+                <label for="documents"><i class="fas fa-paperclip"></i></label>
+                <input type="submit" value="send">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    function img_pathUrl(input){
+        if (input.files.length > 1) {
+            document.getElementById('filecount').innerText = `${input.files.length} files selected`;
+        }
+        else if (input.files.length ==1)
+        {
+            document.getElementById('filecount').innerText = `${input.files[0].name}`;
+        }
+        else if (input.files.length == 0)
+        {
+            document.getElementById('filecount').innerText = '';
+        }
+    }
+</script>
+</html>
