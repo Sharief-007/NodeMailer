@@ -43,8 +43,8 @@ const server = http.createServer(function (request,response) {
 
 });
 
-const PORT = process.env.port || 4444;
-server.listen(PORT);
+const PORT = process.env.PORT || 4444;
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 function CONTENTTYPE(filePath) {
     let contentType = 'text/html';
