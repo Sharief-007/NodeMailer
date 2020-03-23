@@ -113,6 +113,7 @@ function SENDMAIL(request,response) {
 
             transporter.sendMail(mail,(error,result)=> {
                 if (error) {
+                    console.log(error.message);
                     DISPLAYERROR(request,response)
                 }
                 console.log(result);
